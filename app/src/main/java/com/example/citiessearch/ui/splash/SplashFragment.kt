@@ -47,26 +47,31 @@ class SplashFragment : Fragment(), CoroutineScope {
         binding.progressBar.isIndeterminate = true
 
         launch {
-            createTree()
+            trie.value.createTreeFromData(startReader())
+            goToSearchFragment()
         }
-    }
-
-    private fun createTree() {
-        trie.value.createTreeFromData(startReader())
-        goToSearchFragment()
     }
 
     private fun startReader(): List<City> {
         reader = resources.openRawResource(R.raw.cities)
-        val buffer = ByteArray(reader.available())
+        var buffer: ByteArray? = ByteArray(reader.available())
         while (reader.read(buffer) != -1) {
         }
-
-        val text = String(buffer)
-        return ObjectMapper().readValue<List<City>>(
+        var text: String? = null
+        buffer?.let {
+            text = String(it)
+        }
+        val cityJsonList = ObjectMapper().readValue<List<City>>(
             text,
-            ObjectMapper().typeFactory.constructCollectionType(List::class.java, City::class.java)
+            ObjectMapper().typeFactory.constructCollectionType(
+                List::class.java,
+                City::class.java
+            )
         )
+        text = null
+        buffer = null
+        reader.close()
+        return cityJsonList
     }
 
     private fun goToSearchFragment() {

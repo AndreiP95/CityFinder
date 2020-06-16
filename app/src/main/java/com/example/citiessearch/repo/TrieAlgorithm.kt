@@ -36,7 +36,9 @@ class TrieAlgorithm {
                 }
             }
         }
-        tempNode.cities.add(city)
+        if (tempNode.cities == null)
+            tempNode.cities = mutableSetOf()
+        tempNode.cities?.add(city)
     }
 
     fun filterCities(userInput: String): ArrayList<City> {
@@ -90,7 +92,7 @@ class TrieAlgorithm {
 
     private fun addCitiesToList(node: CityNode) {
         /* Collects saved cities from each node, the cities are already sorted in each node */
-        node.cities.forEach { city ->
+        node.cities?.forEach { city ->
             currentFilteredCities++
             filteredList.add(city)
         }

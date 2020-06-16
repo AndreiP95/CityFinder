@@ -26,6 +26,11 @@
         <argument
             android:name="cityData"
             app:argType="com.example.citiessearch.repo.model.City" />
+        <action
+            android:id="@+id/action_cityMapFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_open_exit" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"

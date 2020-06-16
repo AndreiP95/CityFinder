@@ -4,6 +4,7 @@ import android.app.Application
 import com.example.citiessearch.repo.TrieAlgorithm
 import com.example.citiessearch.ui.citymap.CityMapViewModel
 import com.example.citiessearch.ui.search.SearchViewModel
+import com.google.android.gms.maps.MapsInitializer
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -26,7 +27,7 @@ class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        System.gc()
+        MapsInitializer.initialize(this)
         startKoin {
             androidLogger(Level.DEBUG)
             androidContext(this@BaseApplication)
