@@ -48,3 +48,15 @@ Gapp/src/main/java/com/example/citiessearch/ui/search/SearchViewModel.kt,7\2\72
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 v
 Fapp/src/main/java/com/example/citiessearch/ui/search/SearchFragment.kt,8\1\817118d17928f30c4a6354bddf529a0759d979fb
+P
+ app/src/main/res/raw/cities.json,b\8\b888866bd99a75e832a3ebbbff1df3e08d383d44
+[
++app/src/main/res/layout/fragment_search.xml,2\f\2f0ecfae4fe398a722fcad4e3b06b75ba69c589a
+]
+-app/src/main/res/layout/fragment_city_map.xml,5\e\5ee70e65571d7731d86f1b0e441dc29b85933dc4
+S
+#app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
+y
+Iapp/src/main/java/com/example/citiessearch/ui/citymap/CityMapViewModel.kt,0\6\060f955c147a4e64cb6824d413bf206cfc4b5f07
+x
+Happ/src/main/java/com/example/citiessearch/ui/citymap/CityMapFragment.kt,f\c\fc8419e57b368d354ebc3dd2b5bc5afec6e7a04a
