@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">CitiesSearch</string>
     <string name="search_hint">Search for a city</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBetv9XW1w3fb4KRhj92QoeGTthlWL-yFQ</string>
 </resources>

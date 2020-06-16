@@ -1,6 +1,7 @@
 package com.example.citiessearch
 
 import android.app.Application
+import com.example.citiessearch.ui.citymap.CityMapViewModel
 import com.example.citiessearch.ui.search.SearchViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -13,6 +14,7 @@ class BaseApplication : Application() {
 
     private val viewModelModule = module {
         viewModel { SearchViewModel() }
+        viewModel { CityMapViewModel() }
     }
 
     override fun onCreate() {
