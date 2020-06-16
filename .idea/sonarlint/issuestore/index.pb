@@ -9,8 +9,6 @@ h
 8app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml,6\e\6ec7d34b130497a10dc92abcde9b313d370a89df
 R
 "app/src/main/res/values/colors.xml,9\6\969faa2a5d9f5e8390e958d2c07f2cfd54676e6b
-R
-"app/src/main/res/values/styles.xml,f\7\f79cc2688e29fcbc286fda14ae07b27c9e83690f
 m
 =app/src/test/java/com/example/citiessearch/ExampleUnitTest.kt,1\4\144e7985d1784f7c4ee784d3aa4e6168e387729f
 >
