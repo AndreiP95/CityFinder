@@ -1,5 +1,6 @@
 package com.example.citiessearch.ui.search
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -44,6 +45,7 @@ class SearchFragment : Fragment() {
     private fun setupUI() {
         addAdapterAndScrollListener()
         addListenerForSearchBar()
+        resizePhoto(false)
         refreshData(
             searchViewModel.searchForCities("")
         )
@@ -60,19 +62,27 @@ class SearchFragment : Fragment() {
             )
         }
         binding.searchBar?.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus)
-                binding.backgroundImage.layoutParams.height = TypedValue.applyDimension(
-                    TypedValue.COMPLEX_UNIT_DIP,
-                    100.0f,
-                    resources.displayMetrics
-                ).toInt()
-            else
-                binding.backgroundImage.layoutParams.height = TypedValue.applyDimension(
-                    TypedValue.COMPLEX_UNIT_DIP,
-                    200.0f,
-                    resources.displayMetrics
-                ).toInt()
+            resizePhoto(hasFocus)
         }
+    }
+
+    private fun resizePhoto(hasFocus: Boolean) {
+        var imageHeight = 50.0f
+        if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            imageHeight *= 2
+        }
+        if (hasFocus)
+            binding.backgroundImage.layoutParams.height = TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                imageHeight,
+                resources.displayMetrics
+            ).toInt()
+        else
+            binding.backgroundImage.layoutParams.height = TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                imageHeight * 2,
+                resources.displayMetrics
+            ).toInt()
     }
 
     private fun addAdapterAndScrollListener() {
