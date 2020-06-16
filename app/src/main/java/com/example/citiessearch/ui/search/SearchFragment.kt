@@ -6,6 +6,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -48,6 +49,15 @@ class SearchFragment : Fragment() {
         resizePhoto(false)
         refreshData(
             searchViewModel.searchForCities("")
+        )
+
+        requireActivity().onBackPressedDispatcher.addCallback(
+            this,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    requireActivity().finish()
+                }
+            }
         )
     }
 
@@ -109,15 +119,15 @@ class SearchFragment : Fragment() {
 
     private fun refreshData(cities: List<City>) {
         if (!::citiesAdapter.isInitialized) {
-            citiesAdapter = CityAdapter { showCityOnMap() }
+            citiesAdapter = CityAdapter { showCityOnMap(it) }
         }
         binding.citiesRecyclerView.adapter = citiesAdapter
         citiesAdapter.updateCities(cities)
         citiesAdapter.notifyDataSetChanged()
     }
 
-    private fun showCityOnMap() {
-        val action = SearchFragmentDirections.actionShowCityOnMap()
+    private fun showCityOnMap(city: City) {
+        val action = SearchFragmentDirections.actionShowCityOnMap(city)
         findNavController().navigate(action)
     }
 
