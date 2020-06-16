@@ -13,6 +13,7 @@ import com.example.citiessearch.R
 import com.example.citiessearch.databinding.FragmentCityMapBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
@@ -24,6 +25,7 @@ class CityMapFragment : Fragment(), OnMapReadyCallback {
     private val cityMapViewModel by viewModel<CityMapViewModel>()
     private lateinit var binding: FragmentCityMapBinding
     val args: CityMapFragmentArgs by navArgs()
+    private var mapView: MapView? = null
 
 
     override fun onCreateView(
@@ -40,22 +42,35 @@ class CityMapFragment : Fragment(), OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = this
         cityMapViewModel.city = args.cityData
-        binding.map?.onCreate(savedInstanceState)
-        binding.map?.onResume()
-        binding.map?.getMapAsync(this)
+        if (mapView == null) {
+            mapView = binding.map
+            mapView?.onCreate(savedInstanceState)
+        }
     }
 
     override fun onResume() {
         super.onResume()
+        mapView?.onResume()
         requireActivity().onBackPressedDispatcher.addCallback(
             this,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    findNavController().popBackStack()
-
+                    val action = CityMapFragmentDirections.actionCityMapFragmentToSearchFragment()
+                    findNavController().navigate(action)
                 }
             }
         )
+        mapView?.getMapAsync(this)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mapView?.onDestroy()
+    }
+
+    override fun onLowMemory() {
+        super.onLowMemory()
+        mapView?.onLowMemory()
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {
@@ -72,7 +87,7 @@ class CityMapFragment : Fragment(), OnMapReadyCallback {
                         CameraUpdateFactory.newCameraPosition(
                             CameraPosition.builder()
                                 .target(currentCity)
-                                .zoom(15.0f)
+                                .zoom(8.0f)
                                 .build()
                         )
                     )
