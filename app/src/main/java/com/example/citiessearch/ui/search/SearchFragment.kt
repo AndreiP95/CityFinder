@@ -22,8 +22,7 @@ class SearchFragment : Fragment() {
 
     private lateinit var binding: FragmentSearchBinding
     private val searchViewModel by viewModel<SearchViewModel>()
-
-    lateinit var adapter: CityAdapter
+    lateinit var citiesAdapter: CityAdapter
 
 
     override fun onCreateView(
@@ -73,13 +72,15 @@ class SearchFragment : Fragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        refreshData(searchViewModel.getNextCities())
+    }
+
     private fun addAdapterAndScrollListener() {
         val linearLayoutManager = LinearLayoutManager(activity)
-        binding.citiesRecyclerView.apply {
-            layoutManager = linearLayoutManager
-            this.adapter = adapter
-        }
-        addAdapterAndScrollListener()
+        binding.citiesRecyclerView.layoutManager = linearLayoutManager
+
         binding.citiesRecyclerView.addOnScrollListener(
             object : RecyclerView.OnScrollListener() {
                 override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
@@ -90,8 +91,8 @@ class SearchFragment : Fragment() {
                         val visibleItems = it.childCount
 
                         if (visibleItems + it.findFirstVisibleItemPosition() > totalItems - 20) {
-                            adapter.updateCities(searchViewModel.getNextCities())
-                            adapter.notifyDataSetChanged()
+                            citiesAdapter.updateCities(searchViewModel.getNextCities())
+                            citiesAdapter.notifyDataSetChanged()
                         }
                     }
                 }
@@ -99,12 +100,12 @@ class SearchFragment : Fragment() {
     }
 
     private fun refreshData(cities: List<City>) {
-        if (!::adapter.isInitialized) {
-            adapter = CityAdapter { showCityOnMap() }
-            binding.citiesRecyclerView.adapter = adapter
+        if (!::citiesAdapter.isInitialized) {
+            citiesAdapter = CityAdapter { showCityOnMap() }
         }
-        adapter.updateCities(cities)
-        adapter.notifyDataSetChanged()
+        binding.citiesRecyclerView.adapter = citiesAdapter
+        citiesAdapter.updateCities(cities)
+        citiesAdapter.notifyDataSetChanged()
     }
 
     private fun showCityOnMap() {

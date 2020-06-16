@@ -13,7 +13,7 @@ class TrieAlgorithm {
         CityNode('/', HashMap<Char, CityNode>().toSortedMap(compareByDescending { it }))
     private val filteredList: ArrayList<City> = ArrayList()
     private val cityNodeStack: Stack<CityNode> = Stack()
-    private var currentFilteredCities = 0
+    var currentFilteredCities = 0
 
     fun createTreeFromData(cityList: List<City>) {
         cityList.forEach { addCity(it) }
@@ -45,7 +45,11 @@ class TrieAlgorithm {
          */
         resetFilterValues()
         if (userInput.isNotEmpty()) {
-            cityNodeStack.push(findStartNode(userInput))
+            val node = findStartNode(userInput)
+            if (node == null)
+                return filteredList
+            else
+                cityNodeStack.push(node)
         } else {
             cityNodeStack.push(root)
         }

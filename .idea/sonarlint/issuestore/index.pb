@@ -50,10 +50,6 @@ v
 Fapp/src/main/java/com/example/citiessearch/ui/search/SearchFragment.kt,8\1\817118d17928f30c4a6354bddf529a0759d979fb
 P
  app/src/main/res/raw/cities.json,b\8\b888866bd99a75e832a3ebbbff1df3e08d383d44
-[
-+app/src/main/res/layout/fragment_search.xml,2\f\2f0ecfae4fe398a722fcad4e3b06b75ba69c589a
-]
--app/src/main/res/layout/fragment_city_map.xml,5\e\5ee70e65571d7731d86f1b0e441dc29b85933dc4
 S
 #app/src/main/res/values/strings.xml,d\2\d2281fbb3027de2722081a53408dd77628bf080e
 y
