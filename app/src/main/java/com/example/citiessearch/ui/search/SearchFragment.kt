@@ -44,6 +44,9 @@ class SearchFragment : Fragment() {
     private fun setupUI() {
         addAdapterAndScrollListener()
         addListenerForSearchBar()
+        refreshData(
+            searchViewModel.searchForCities("")
+        )
     }
 
     private fun addListenerForSearchBar() {
@@ -70,11 +73,6 @@ class SearchFragment : Fragment() {
                     resources.displayMetrics
                 ).toInt()
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        refreshData(searchViewModel.getNextCities())
     }
 
     private fun addAdapterAndScrollListener() {
