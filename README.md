@@ -76,12 +76,12 @@ Filtering is based on a search tree based on the [Trie](https://en.wikipedia.org
 
 
    ### Second step
-    - Filter algorithm is based on a [Depth first search](https://en.wikipedia.org/wiki/Depth-first_search) after the characters inside the user input. 
-    - It starts from root node, checks if the next character is part of the nodes children and goes to the next children. If one of the characters is not in the tree structure, the search stops and returns an empty list, otherwise it returns the node where to start retrieving the cities.
+   - Filter algorithm is based on a [Depth first search](https://en.wikipedia.org/wiki/Depth-first_search) after the characters inside the user input. 
+   - It starts from root node, checks if the next character is part of the nodes children and goes to the next children. If one of the characters is not in the tree structure, the search stops and returns an empty list, otherwise it returns the node where to start retrieving the cities.
    
    ### Third step
-     - The final step is creating the list of cities by retrieving the first page of the cities, containing 100 entries. If the user wants to see the next page, the retrieving continues from the last node, which is kept in a stack. 
-     - When the user changes the input, the stack and the city list are cleared and the search restarts from the root node.
+   - The final step is creating the list of cities by retrieving the first page of the cities, containing 100 entries. If the user wants to see the next page, the retrieving continues from the last node, which is kept in a stack. 
+   - When the user changes the input, the stack and the city list are cleared and the search restarts from the root node.
 
 ## Spatial and Temporal Complexity 
 
