@@ -11,7 +11,7 @@ and showing the selected city on a map.
 
 [Trie algorithm](#trie-algorithm)
 
-[Spatial and temporal Complexity](#complexity)
+[Spatial and temporal Complexity](#spatial-and-temporal-complexity)
 
 
 ## General
