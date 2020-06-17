@@ -5,12 +5,16 @@ and showing the selected city on a map.
 
 ## Documentation
 
+[General](#general)
+
 [UI Details](#ui-details)
 
 [Trie algorithm](#trie-algorithm)
 
 [Spatial and temporal Complexity](#complexity)
 
+
+## General
 
 ## UI Details
 
@@ -24,7 +28,11 @@ The app is created from one Activtiy with three Fragments.
         When the user presses on a city, it will be redirected to the map.
         
   - A map screen that shows the location of the city on a Google Map
-        It zooms in the location of the city while showing a marker containing the city name and country. 
+        It zooms in the location of the city while showing a marker containing the city name and country.
+        
+  
+Navigation between UI is made using [Navigation components](https://developer.android.com/guide/navigation) to ensure the future
+  scalability of the project, if other screens / features have to be added in the next development cycles. 
  
 
 ## Trie Algorithm
