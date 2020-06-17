@@ -18,7 +18,7 @@ and showing the selected city on a map.
 
 The application is build based on MVVM architecture pattern and is using [Android Arhitecture Components](https://developer.android.com/topic/libraries/architecture).
 Using of ViewModel and Databinding for UI implementation.
-The Application is also using the following libraries:[Koin](https://insert-koin.io/), [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html), [Jackson]("https://github.com/FasterXML/jackson)
+The Application is also using the following libraries: [Koin](https://insert-koin.io/), [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html), [Jackson](https://github.com/FasterXML/jackson)
 
 
 ## UI Details
