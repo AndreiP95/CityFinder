@@ -39,7 +39,7 @@ class CityAdapter(
     inner class CityViewHolder(cityLayout: View) : RecyclerView.ViewHolder(cityLayout) {
         fun bind(city: City) {
             itemView.city_coords.text = city.coord.toString()
-            itemView.city_name.text = city.let { "${it.name},${it.country}" }
+            itemView.city_name.text = city.let { "${it.name}, ${it.country}" }
             itemView.setOnClickListener { itemClick(city) }
         }
 

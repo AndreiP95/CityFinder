@@ -80,7 +80,7 @@ class CityMapFragment : Fragment(), OnMapReadyCallback {
                     val marker = addMarker(
                         MarkerOptions()
                             .position(currentCity)
-                            .title("${city.name},${city.country}")
+                            .title("${city.name}, ${city.country}")
                     )
                     googleMap.animateCamera(
                         CameraUpdateFactory.newCameraPosition(
