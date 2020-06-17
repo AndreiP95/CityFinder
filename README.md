@@ -84,4 +84,16 @@ Filtering is based on a search tree based on the [Trie](https://en.wikipedia.org
    - When the user changes the input, the stack and the city list are cleared and the search restarts from the root node.
 
 ## Spatial and Temporal Complexity 
-
+  
+  ### Temporal Complexity
+  
+  - Searching for the first city with the coresponding prefix is done in a O(k) complexity, with k being the number of characters in the input. Based on the fact that max number of characters in a city is 50, the complexity is close to being O(log(n)) which is far greater than linear.
+  - Showing the cities that have the user input prefix, are shown paginated with increments of 100 such as, the only case when the list contains all entries is when the user scrolls all to the bottom of the list and the input field is empty.
+  
+  
+  ### Spatial Complexity
+  
+  - The spatial complexity of the tree is close to O(n), since we keep the entries only once in the tree. The only increase in spatial complexity is due to the references of the children nodes in the tree. 
+  - Since the tree is created by adding nodes for each character in a word, the implementation is scalable if more cities are added due to the fact that if we have more cities that contains the same prefix, less nodes are needed to be created, and the spatial complexity will remain linear with each new entry that will be added. 
+  
+  Also, this implementation is more scalable if more entries are added / removed. If we want to add 100k more cities, it won't change the existing nodes, it will add more children and entries. Comparing with a list, the list will need to be re-sorted, which is a time consuming task. 
