@@ -21,6 +21,7 @@ import org.koin.android.ext.android.inject
 import java.io.InputStream
 import kotlin.coroutines.CoroutineContext
 
+
 class SplashFragment : Fragment(), CoroutineScope {
 
     private val trie = inject<TrieAlgorithm>()
