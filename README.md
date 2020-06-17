@@ -18,7 +18,7 @@ and showing the selected city on a map.
 
 ## UI Details
 
-The app is created from one Activtiy with three Fragments. 
+The app is created from one Activity with three Fragments. 
   - A splash screen that is shown during the inital data processing.
         It contains the app logo and a loading spinner to show the user that the data is still loading
         
