@@ -1,12 +1,12 @@
-package com.example.citiessearch.ui.search.adapter
+package com.example.cityfinder.ui.search.adapter
 
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.citiessearch.R
-import com.example.citiessearch.repo.model.City
+import com.example.cityfinder.R
+import com.example.cityfinder.repo.model.City
 import kotlinx.android.synthetic.main.item_city.view.*
 import org.koin.core.KoinComponent
 

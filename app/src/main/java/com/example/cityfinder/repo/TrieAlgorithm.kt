@@ -1,8 +1,8 @@
-package com.example.citiessearch.repo
+package com.example.cityfinder.repo
 
-import com.example.citiessearch.repo.model.City
-import com.example.citiessearch.repo.model.CityNode
-import com.example.citiessearch.utils.CITIES_LIMIT
+import com.example.cityfinder.repo.model.City
+import com.example.cityfinder.repo.model.CityNode
+import com.example.cityfinder.utils.CITIES_LIMIT
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap

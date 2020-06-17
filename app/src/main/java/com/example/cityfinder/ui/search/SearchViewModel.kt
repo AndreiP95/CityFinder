@@ -1,8 +1,8 @@
-package com.example.citiessearch.ui.search
+package com.example.cityfinder.ui.search
 
 import androidx.lifecycle.ViewModel
-import com.example.citiessearch.repo.TrieAlgorithm
-import com.example.citiessearch.repo.model.City
+import com.example.cityfinder.repo.TrieAlgorithm
+import com.example.cityfinder.repo.model.City
 import org.koin.core.KoinComponent
 import org.koin.core.inject
 

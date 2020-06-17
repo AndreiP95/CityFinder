@@ -1,7 +1,7 @@
-package com.example.citiessearch.ui.citymap
+package com.example.cityfinder.ui.citymap
 
 import androidx.lifecycle.ViewModel
-import com.example.citiessearch.repo.model.City
+import com.example.cityfinder.repo.model.City
 
 class CityMapViewModel : ViewModel() {
 

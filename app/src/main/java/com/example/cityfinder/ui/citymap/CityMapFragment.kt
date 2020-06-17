@@ -1,4 +1,4 @@
-package com.example.citiessearch.ui.citymap
+package com.example.cityfinder.ui.citymap
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.citiessearch.R
-import com.example.citiessearch.databinding.FragmentCityMapBinding
+import com.example.cityfinder.R
+import com.example.cityfinder.databinding.FragmentCityMapBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView

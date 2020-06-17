@@ -1,6 +1,6 @@
-package com.example.citiessearch
+package com.example.cityfinder
 
-import com.example.citiessearch.repo.TrieAlgorithm
+import com.example.cityfinder.repo.TrieAlgorithm
 import org.junit.Before
 import org.junit.Test
 import org.koin.android.ext.koin.androidContext

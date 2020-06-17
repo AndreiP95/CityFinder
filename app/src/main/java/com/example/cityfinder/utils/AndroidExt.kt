@@ -1,4 +1,4 @@
-package com.example.citiessearch.utils
+package com.example.cityfinder.utils
 
 import android.text.Editable
 import android.text.TextWatcher

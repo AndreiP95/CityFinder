@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.citiessearch.ui.search.SearchFragment"
+        android:name="com.example.cityfinder.ui.search.SearchFragment"
         android:label="SearchFragment">
         <action
             android:id="@+id/action_show_city_on_map"
@@ -15,17 +15,17 @@
             app:popUpToInclusive="true">
             <argument
                 android:name="cityData"
-                app:argType="com.example.citiessearch.repo.model.City" />
+                app:argType="com.example.cityfinder.repo.model.City" />
         </action>
 
     </fragment>
     <fragment
         android:id="@+id/cityMapFragment"
-        android:name="com.example.citiessearch.ui.citymap.CityMapFragment"
+        android:name="com.example.cityfinder.ui.citymap.CityMapFragment"
         android:label="CityMapFragment">
         <argument
             android:name="cityData"
-            app:argType="com.example.citiessearch.repo.model.City" />
+            app:argType="com.example.cityfinder.repo.model.City" />
         <action
             android:id="@+id/action_cityMapFragment_to_searchFragment"
             app:destination="@id/searchFragment"
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.citiessearch.ui.splash.SplashFragment"
+        android:name="com.example.cityfinder.ui.splash.SplashFragment"
         android:label="SplashFragment">
         <action
             android:id="@+id/action_splashFragment_to_searchFragment"
