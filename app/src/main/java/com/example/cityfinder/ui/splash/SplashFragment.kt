@@ -1,4 +1,4 @@
-package com.example.citiessearch.ui.splash
+package com.example.cityfinder.ui.splash
 
 
 import android.os.Bundle
@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.citiessearch.R
-import com.example.citiessearch.databinding.FragmentSplashBinding
-import com.example.citiessearch.repo.TrieAlgorithm
-import com.example.citiessearch.repo.model.City
+import com.example.cityfinder.R
+import com.example.cityfinder.databinding.FragmentSplashBinding
+import com.example.cityfinder.repo.TrieAlgorithm
+import com.example.cityfinder.repo.model.City
 import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

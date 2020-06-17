@@ -1,8 +1,8 @@
-package com.example.citiessearch.ui
+package com.example.cityfinder.ui
 
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
-import com.example.citiessearch.R
+import com.example.cityfinder.R
 
 class MainActivity : FragmentActivity() {
 

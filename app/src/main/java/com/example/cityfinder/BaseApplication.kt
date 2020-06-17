@@ -1,9 +1,9 @@
-package com.example.citiessearch
+package com.example.cityfinder
 
 import android.app.Application
-import com.example.citiessearch.repo.TrieAlgorithm
-import com.example.citiessearch.ui.citymap.CityMapViewModel
-import com.example.citiessearch.ui.search.SearchViewModel
+import com.example.cityfinder.repo.TrieAlgorithm
+import com.example.cityfinder.ui.citymap.CityMapViewModel
+import com.example.cityfinder.ui.search.SearchViewModel
 import com.google.android.gms.maps.MapsInitializer
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
