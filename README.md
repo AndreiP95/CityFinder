@@ -39,12 +39,13 @@ Navigation between UI is made using [Navigation components](https://developer.an
 
 Filtering is based on a search tree based on the [Trie](https://en.wikipedia.org/wiki/Trie) algorithm based on three steps.
 
+### First step
   - First step is reading the data into a buffer and parsing the JSON into a list of cities and creating the tree. 
     The tree is created based on the following structure:
     
       Every node contains three elements: A char, a list of children and a list of cities. For every city in the list, the tree is created by parsing the city name, creating a node for each char in its name and keeping its data into the node corresponding with the last character.
       
-       ### Example 
+       #### Example 
           City names : Madrid
           Tree structure: 
                           M (cities = null, children = A)
@@ -58,6 +59,22 @@ Filtering is based on a search tree based on the [Trie](https://en.wikipedia.org
                           I (cities = null, children = D)
                           🠫
                           D (cities = Madrid, children = null)
+                          
+                       City names : Madrid, Miami
+                       Tree structure: M ( cities = null, children = A,I)
+                                     ⬋  ⬊
+    (cities = null, children = D )  A     I  (cities = null, children = I )
+                                    🠫     🠫
+    (cities = null, children = R)   D     A  (cities = null, children = A )
+                                    🠫     🠫
+    (cities = null, children = I)   R     M  (cities = null, children = M )
+                                    🠫     🠫
+    (cities = null, children = D)   I     I  (cities = Miami, children = null)
+                                    🠫
+(cities = Madrid, children = null)  D 
+
+
+      
 
 ## Spatial and Temporal Complexity 
 
