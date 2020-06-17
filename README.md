@@ -5,4 +5,10 @@ and showing the selected city on a map.
 
 ## Documentation
 
-[Trie algorithm]
+[Trie algorithm](#trie-algorithm)
+
+
+## Trie Algorithm
+
+A dfs-based search tree
+
