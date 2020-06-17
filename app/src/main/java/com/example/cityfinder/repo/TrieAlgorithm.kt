@@ -63,9 +63,11 @@ class TrieAlgorithm {
                 }
             }
         }
-        if (tempNode.cities == null)
-            tempNode.cities = mutableSetOf()
+        if (tempNode.cities == null) {
+            tempNode.cities = sortedSetOf(compareBy<City> { it.name }.thenBy { it.country })
+        }
         tempNode.cities?.add(city)
+
     }
 
     /**
