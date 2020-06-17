@@ -60,18 +60,19 @@ Filtering is based on a search tree based on the [Trie](https://en.wikipedia.org
                           🠫
                           D (cities = Madrid, children = null)
                           
-                       City names : Madrid, Miami
-                       Tree structure: M ( cities = null, children = A,I)
-                                     ⬋  ⬊
-    (cities = null, children = D )  A     I  (cities = null, children = I )
-                                    🠫     🠫
-    (cities = null, children = R)   D     A  (cities = null, children = A )
-                                    🠫     🠫
-    (cities = null, children = I)   R     M  (cities = null, children = M )
-                                    🠫     🠫
-    (cities = null, children = D)   I     I  (cities = Miami, children = null)
-                                    🠫
-(cities = Madrid, children = null)  D 
+                City names : Madrid, Miami
+                Tree structure: 
+                                               M ( cities = null, children = A,I)
+                                             ⬋  ⬊
+            (cities = null, children = D )  A     I  (cities = null, children = I )
+                                            🠫     🠫
+            (cities = null, children = R)   D     A  (cities = null, children = A )
+                                            🠫     🠫
+            (cities = null, children = I)   R     M  (cities = null, children = M )
+                                            🠫     🠫
+            (cities = null, children = D)   I     I  (cities = Miami, children = null)
+                                            🠫
+        (cities = Madrid, children = null)  D 
 
 
       
