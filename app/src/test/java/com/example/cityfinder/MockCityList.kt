@@ -1,7 +1,7 @@
-package com.example.citiessearch
+package com.example.cityfinder
 
-import com.example.citiessearch.repo.model.City
-import com.example.citiessearch.repo.model.CityCoordinate
+import com.example.cityfinder.repo.model.City
+import com.example.cityfinder.repo.model.CityCoordinate
 
 class MockCityList {
     fun cityList(): List<City> {

@@ -1,4 +1,4 @@
-package com.example.citiessearch.ui.search
+package com.example.cityfinder.ui.search
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -12,11 +12,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.citiessearch.R
-import com.example.citiessearch.databinding.FragmentSearchBinding
-import com.example.citiessearch.repo.model.City
-import com.example.citiessearch.ui.search.adapter.CityAdapter
-import com.example.citiessearch.utils.afterTextChanged
+import com.example.cityfinder.R
+import com.example.cityfinder.databinding.FragmentSearchBinding
+import com.example.cityfinder.repo.model.City
+import com.example.cityfinder.ui.search.adapter.CityAdapter
+import com.example.cityfinder.utils.afterTextChanged
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 

@@ -1,4 +1,4 @@
-package com.example.citiessearch.repo.model
+package com.example.cityfinder.repo.model
 
 import android.os.Parcel
 import android.os.Parcelable
