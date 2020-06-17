@@ -7,17 +7,44 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
+/**
+ *
+ * @property root CityNode = Start point of the tree
+ * @property filteredList ArrayList<City> = List with resulted cities after filtering
+ * @property cityNodeStack Stack<CityNode> = Stack with the current dfs translation of the tree
+ * @property currentFilteredCities Int = Number of filtered cities
+ */
+
 class TrieAlgorithm {
 
     private val root =
         CityNode('/', HashMap<Char, CityNode>().toSortedMap(compareByDescending { it }))
     private val filteredList: ArrayList<City> = ArrayList()
+
     private val cityNodeStack: Stack<CityNode> = Stack()
     var currentFilteredCities = 0
+
+    /**
+     *
+     * @param cityList List<City> = Receives the list of cities
+     * after it was read and parsed
+     * Adds all the cities into the tree structure
+     *
+     */
 
     fun createTreeFromData(cityList: List<City>) {
         cityList.forEach { addCity(it) }
     }
+
+    /**
+     *
+     * @param city City
+     * Adds a city into the tree and creates coresponding nodes into the tree based on
+     * the city's name length.
+     * If there were no cities with the same char in prefix, it creates another node for each character,
+     * otherwise it goes to the next node.
+     * Saves the city in the node that contains the last char and is on len(city.name) level in the tree
+     */
 
     private fun addCity(city: City) {
         /* Adds the city to the tree. The city is added with its corresponding cities already sorted */
@@ -41,10 +68,19 @@ class TrieAlgorithm {
         tempNode.cities?.add(city)
     }
 
+    /**
+     *
+     * @param userInput String = User input text
+     * @return ArrayList<City> = List of filtered cities
+     * Resets the previous search and returns the next page of filteres cities
+     * If the input is empty, then it starts from the root node
+     * If the input is not empty, then it searches for the corresponding node
+     * If no node that corresponds to the input is found, then it returns an empty list
+     * If a node that corresponds to the input is found, then it returns the first page of cities
+     */
+
     fun filterCities(userInput: String): ArrayList<City> {
-        /* Resets the previous search, adds the corresponding substring node
-            Or root if the userInput is empty and starts retrieving the cities
-         */
+
         resetFilterValues()
         if (userInput.isNotEmpty()) {
             val node = findStartNode(userInput)
@@ -58,6 +94,12 @@ class TrieAlgorithm {
         searchCities()
         return filteredList
     }
+
+    /**
+     *
+     * @param cityName String = user input text
+     * @return CityNode? = Node that contains the user input text, or null if it does not exist
+     */
 
     fun findStartNode(cityName: String): CityNode? {
         /* Start node is the corresponding node where adding the chars
@@ -75,11 +117,15 @@ class TrieAlgorithm {
         return tempNode
     }
 
+    /**
+     * Retrieve the next page of cities,
+     * Uses an iterative Depth-First search for the retrieve
+     * Uses a stack instead of doing it recursively, because after the CITIES_LIMIT
+     * has been reached, for the next page the search should continue from the last node
+     * If the stack has been cleared, the search stops
+     */
+
     private fun searchCities() {
-        /* Iterative Depth first search to find another page of cities
-            It saves the stack for the case when the user is scrolling down and wants to see the next
-            Page of cities
-         */
         lateinit var currentNode: CityNode
         while (!cityNodeStack.isEmpty() && currentFilteredCities < CITIES_LIMIT) {
             currentNode = cityNodeStack.pop()
@@ -90,6 +136,14 @@ class TrieAlgorithm {
         }
     }
 
+    /**
+     *
+     * @param node CityNode = Current node in dfs
+     * Checks if the node has saved cities and adds them to the filtered list
+     * Increments the total number of filtered cities to avoid calling
+     * size for filteredList
+     */
+
     private fun addCitiesToList(node: CityNode) {
         /* Collects saved cities from each node, the cities are already sorted in each node */
         node.cities?.forEach { city ->
@@ -98,11 +152,21 @@ class TrieAlgorithm {
         }
     }
 
+    /**
+     * Resets stack, list and number of filtered cities when another search is started
+     *
+     */
+
     private fun resetFilterValues() {
         cityNodeStack.clear()
         filteredList.clear()
         currentFilteredCities = 0
     }
+
+    /**
+     * Gets the next CITIES_LIMIT of cities
+     * @return List<City> list with the previous pages plus the next ones
+     */
 
     fun getNextPage(): List<City> {
         currentFilteredCities = 0
