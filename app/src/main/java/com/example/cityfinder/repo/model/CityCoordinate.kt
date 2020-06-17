@@ -3,6 +3,12 @@ package com.example.cityfinder.repo.model
 import android.os.Parcel
 import android.os.Parcelable
 
+/**
+ *
+ * @property lat Double = Latitude of the city
+ * @property lon Double = Longitude of the city
+ */
+
 class CityCoordinate() : Parcelable {
 
     var lat: Double = 0.0

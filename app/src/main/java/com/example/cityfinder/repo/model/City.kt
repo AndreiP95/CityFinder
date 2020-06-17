@@ -3,6 +3,14 @@ package com.example.cityfinder.repo.model
 import android.os.Parcel
 import android.os.Parcelable
 
+/**
+ *
+ * @property name String? = Name of the city
+ * @property country String? = Name of the country
+ * @property _id String? = City id
+ * @property coord CityCoordinate? = Coordinates object with Lat and Long
+ */
+
 class City() : Parcelable {
 
     var name: String? = null
