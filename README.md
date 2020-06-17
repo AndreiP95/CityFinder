@@ -7,6 +7,8 @@ and showing the selected city on a map.
 
 [General](#general)
 
+[Instructions](#instructions)
+
 [UI Details](#ui-details)
 
 [Trie algorithm](#trie-algorithm)
@@ -23,6 +25,15 @@ and showing the selected city on a map.
  - Written in [Kotlin](https://kotlinlang.org/) version 1.3.70
  - IDE used is [AndroidStudio](https://developer.android.com/studio) version 3.5.1
  - The app min requirement is SDK 21 ( Android 5.0, [Lolipop](https://developer.android.com/about/versions/lollipop) )
+ 
+## Instructions 
+
+  1.	Download and unzip the app in a folder.
+  2.	Make sure you have Android Studio installed on the machine.
+  3.	Enter Android studio and either choose “Import existing project” if it is prompted out or enter the app, and choose File ->  Open -> “Choose project path” 
+  4.	After starting the app you will be greeted by a Splash screen and then redirected in the search screen where you will see a list of cities and a Search bar.
+  5.	By typing into the Search Bar, you will see the new list of cities based on the text from the Search Bar.
+  6.	By selecting a city from the list you will be redirected to a Google Map on the city’s location where you can see a marker with the City name and country.
 
 ## UI Details
 
