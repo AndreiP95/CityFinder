@@ -5,6 +5,8 @@ import com.example.cityfinder.repo.model.CityCoordinate
 
 class MockCityList {
     fun cityList(): List<City> {
+
+
         val cityList = ArrayList<City>()
         cityList.add(City("Bucharest", "Ro", "1", CityCoordinate()))
         cityList.add(City("Braila", "Ro", "1", CityCoordinate()))
@@ -18,6 +20,8 @@ class MockCityList {
         cityList.add(City("Washington", "Ro", "1", CityCoordinate()))
         cityList.add(City("Jakarta", "Id", "1", CityCoordinate()))
         cityList.add(City("Sofia", "Bg", "1", CityCoordinate()))
+        cityList.add(City("Sofia", "Bg", "1", CityCoordinate()))
+
 
         return cityList
 

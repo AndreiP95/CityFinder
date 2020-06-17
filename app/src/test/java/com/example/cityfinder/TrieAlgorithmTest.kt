@@ -84,4 +84,30 @@ class TrieAlgorithmTest : KoinComponent {
         }
     }
 
+    @Test
+    fun allCitiesOnNoInput() {
+        assert(MockCityList().cityList().size == trieAlgorithm.filterCities("").size)
+    }
+
+    @Test
+    fun checkDuplicatesAreSaved() {
+        val userText = "Sofia".toUpperCase()
+        assert(
+            trieAlgorithm.findStartNode(userText)?.cities?.size == 2
+        )
+    }
+
+    @Test
+    fun checkIfNodeHasEmptyCitiesList() {
+        val userInput = "Sof".toUpperCase()
+        assert(trieAlgorithm.findStartNode(userInput)?.cities.isNullOrEmpty())
+    }
+
+    @Test
+    fun checkIfThereIsNoNextPage() {
+        val userInput = "B"
+        val firstPageCities = trieAlgorithm.filterCities(userInput)
+        assert(firstPageCities.size == trieAlgorithm.getNextPage().size)
+    }
+
 }
