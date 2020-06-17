@@ -20,8 +20,8 @@ and showing the selected city on a map.
  - Using of ViewModel and Databinding for UI implementation.
  - The Application is also using the following libraries: [Koin](https://insert-koin.io/), [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html), [Jackson](https://github.com/FasterXML/jackson)
  - Code cleanup for the app has been made using [Sonar Lint](https://www.sonarlint.org/)
- - Written in [Kotlin]("https://kotlinlang.org/) version 1.3.70
- - IDE used is [Android](https://developer.android.com/studio) version 3.5.1
+ - Written in [Kotlin](https://kotlinlang.org/) version 1.3.70
+ - IDE used is [AndroidStudio](https://developer.android.com/studio) version 3.5.1
  - The app min requirement is SDK 21 ( Android 5.0, [Lolipop](https://developer.android.com/about/versions/lollipop) )
 
 ## UI Details
