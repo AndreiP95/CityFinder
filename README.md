@@ -11,7 +11,6 @@ and showing the selected city on a map.
 
 [Spatial and temporal Complexity](#complexity)
 
-[Usage](#usage)
 
 ## UI Details
 
@@ -33,6 +32,4 @@ The app is created from one Activtiy with three Fragments.
 A dfs-based search tree
 
 ## Spatial and Temporal Complexity 
-
-## Usage
 
