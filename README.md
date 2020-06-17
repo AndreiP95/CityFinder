@@ -5,10 +5,22 @@ and showing the selected city on a map.
 
 ## Documentation
 
+[UI Details] (#ui-details)
+
 [Trie algorithm](#trie-algorithm)
+
+[Spatial and temporal Complexity](#complexity)
+
+[Usage](#usage)
+
+## UI Details
 
 
 ## Trie Algorithm
 
 A dfs-based search tree
+
+## Spatial and Temporal Complexity 
+
+## Usage
 
