@@ -63,9 +63,20 @@ class TrieAlgorithm {
                 }
             }
         }
-        if (tempNode.cities == null)
+        if (tempNode.cities == null) {
             tempNode.cities = mutableSetOf()
-        tempNode.cities?.add(city)
+            tempNode.cities?.add(city)
+        } else {
+            tempNode.cities?.add(city)
+            tempNode.cities?.let {
+                tempNode.cities = it.sortedWith(
+                    compareBy(
+                        { it.name },
+                        { it.country }
+                    )
+                ).toMutableSet()
+            }
+        }
     }
 
     /**
