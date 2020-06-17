@@ -5,7 +5,7 @@ and showing the selected city on a map.
 
 ## Documentation
 
-[UI Details] (#ui-details)
+[UI Details](#ui-details)
 
 [Trie algorithm](#trie-algorithm)
 
@@ -14,7 +14,6 @@ and showing the selected city on a map.
 [Usage](#usage)
 
 ## UI Details
-
 
 ## Trie Algorithm
 
