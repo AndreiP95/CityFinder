@@ -55,8 +55,7 @@ class CityMapFragment : Fragment(), OnMapReadyCallback {
             this,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    val action = CityMapFragmentDirections.actionCityMapFragmentToSearchFragment()
-                    findNavController().navigate(action)
+                    findNavController().popBackStack()
                 }
             }
         )
